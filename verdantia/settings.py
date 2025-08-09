@@ -132,10 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_CREDENTIALS = True
 
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
 FRONTEND_URLS = [
     "http://localhost:5173",                # Local Vite dev server
     "https://verdantia-lovat.vercel.app",   # Production Vercel deployment
