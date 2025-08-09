@@ -14,7 +14,7 @@ def home_view(request):
 def check_auth(request):
     return JsonResponse({'authenticated': True, 'username': request.user.username})
 
-@login_required
+# @login_required
 def login_view(request):
     if request.method == "POST":
         form = UserLoginForm(request, data=request.POST)

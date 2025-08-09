@@ -1,0 +1,39 @@
+# === Logs ===
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# === Node.js (React - client) ===
+client/node_modules/
+client/.env
+client/build/
+client/dist/
+client/dist-ssr/
+client/*.local
+
+# === Python (Django - server) ===
+server/__pycache__/
+server/*.py[cod]
+server/.env
+server/venv/
+server/db.sqlite3
+server/staticfiles/
+
+# === IDE/editor files ===
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# === Misc ===
+*.lock
+
