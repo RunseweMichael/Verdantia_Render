@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log-in Page</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    {% load static %}
+
+    <style>
+      body.login-body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-image: url('{% static "verdantia/image/img1.jpg" %}');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+      }
+
+      .login-container {
+        background-color: transparent;
+        padding: 2rem 3rem;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(4, 177, 42, 0.2);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .login-title {
+        font-size: 1.8rem;
+        font-weight: bolder;
+        margin-bottom: 1.5rem;
+        color: rgb(26, 155, 48);
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .login-form p {
+        margin-bottom: 1rem;
+      }
+
+      .login-form label {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-weight: bolder;
+        font-size: 1.3rem;
+        color: white;
+      }
+
+      .login-form input {
+        width: 100%;
+        padding: 0.6rem;
+        border: 2px solid rgb(26, 155, 48);
+        border-radius: 8px;
+        background-color: transparent;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .login-form input:focus {
+        outline: 3px solid rgb(26, 155, 48);
+      }
+
+      .login-submit {
+        margin-top: 1rem;
+        width: 100%;
+        padding: 0.75rem;
+        background-color: rgb(26, 155, 48);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .login-submit:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body class="login-body">
+    <div class="login-container">
+      <h2 class="login-title">Log In to Verdantia 🌱</h2>
+      <form action="{% url 'login' %}" method="POST" class="login-form">
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="login-submit">Log In</button>
+      </form>
+      <p style="color: white">
+        Don't have an account?
+        <a href="{% url 'signup' %}" style="color: rgb(26, 155, 48)">Sign up</a>
+      </p>
+    </div>
+  </body>
+</html>
