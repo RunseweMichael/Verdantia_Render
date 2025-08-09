@@ -21,10 +21,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",   # React dev
-    "https://verdantia-lovat.vercel.app",  # Production
+FRONTEND_URLS = [
+    "http://localhost:5173",                # Local Vite dev server
+    "https://verdantia-lovat.vercel.app",   # Production Vercel deployment
 ]
+
+CORS_ALLOWED_ORIGINS = FRONTEND_URLS
+CSRF_TRUSTED_ORIGINS = FRONTEND_URLS
 
 CORS_ALLOW_CREDENTIALS = True
 
